@@ -1,0 +1,234 @@
+/* AddProducts.css */
+
+/* Base Container Styles */
+.add-products-container {
+  background-color: #83b2f8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .add-products-container {
+  background-color: #121212;
+}
+
+/* Card Styles */
+.product-card,
+.password-verification-card {
+  background-color: #7beff3;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .product-card,
+.dark-mode .password-verification-card {
+  background-color: #1e1e1e;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Styles */
+.product-card-header,
+.password-verification-card .card-header {
+  background-color: #2d7ff1c5;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.5rem;
+}
+
+.dark-mode .product-card-header,
+.dark-mode .password-verification-card .card-header {
+  background-color: #1a4b8c;
+}
+
+/* Body Styles */
+.product-card-body,
+.password-verification-card .card-body {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .product-card-body,
+.dark-mode .password-verification-card .card-body {
+  background-color: #2d2d2d;
+}
+
+/* Navigation Link */
+.nav-link {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .form-group label {
+  color: #e0e0e0;
+}
+
+.form-control {
+  height: 45px;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .form-control {
+  background-color: #3d3d3d;
+  border-color: #444;
+  color: #ffffff;
+}
+
+.dark-mode .form-control::placeholder {
+  color: #aaa;
+}
+
+.form-control:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.dark-mode .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Buttons */
+.submit-btn,
+.verify-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover,
+.verify-btn:hover {
+  background-color: #0056b3;
+}
+
+.back-btn {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .back-btn {
+  color: #4a90e2;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+/* Alerts */
+.alert {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.alert-info {
+  background-color: #d9edf7;
+  color: #31708f;
+}
+
+.dark-mode .alert-info {
+  background-color: #004085;
+  color: #cce5ff;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.dark-mode .alert-success {
+  background-color: #155724;
+  color: #d4edda;
+}
+
+.alert-danger {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.dark-mode .alert-danger {
+  background-color: #721c24;
+  color: #f8d7da;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-card,
+  .password-verification-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 20px;
+  }
+
+  .add-products-container {
+    padding: 30px 15px;
+  }
+
+  .product-card-body,
+  .password-verification-card .card-body {
+    padding: 20px;
+  }
+}
+
+/* Password Verification Specific */
+.password-verification-card {
+  max-width: 450px;
+}
+
+.password-verification-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.verify-btn {
+  margin-top: 10px;
+}

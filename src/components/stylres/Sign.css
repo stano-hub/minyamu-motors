@@ -1,0 +1,73 @@
+/* Styling for the entire background of the page */
+.back {
+    background-color: #10101a; /* Dark background */
+    min-height: 100vh;
+    padding-top: 20px;
+  }
+  
+  /* Card styling */
+  .glowing-card {
+    background-color: #21d7e4;  /* White background for the card */
+    padding: 30px;
+    border-radius: 15px;  /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Card shadow effect and glowing hover effect */
+  .glowing-card:hover {
+    box-shadow: 0 15px 40px rgba(0, 123, 255, 0.6); /* Brighter shadow on hover */
+    transform: translateY(-10px); /* Slight raise effect */
+  }
+  
+  /* Title styling */
+  .title {
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Styling the status messages */
+  .status1 {
+    color: #00c853;  /* Success message color */
+    text-align: center;
+  }
+  .status2 {
+    color: #ff5722;  /* Error message color */
+    text-align: center;
+  }
+  
+  /* Styling the signup form inputs */
+  .signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Button styling */
+  #in {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Link styling */
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .glowing-card {
+      width: 90%;
+      padding: 20px;
+    }
+  }
+  

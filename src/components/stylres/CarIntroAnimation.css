@@ -1,0 +1,173 @@
+/* CarIntroAnimation.css */
+
+/* Animation Container */
+.intro-animation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #1a1a2e 0%, #16213e 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 0.5s ease-out 1.5s forwards;
+    overflow: hidden;
+  }
+  
+  /* Logo Container */
+  .logo-display {
+    position: absolute;
+    top: 15%;
+    text-align: center;
+    z-index: 2;
+    animation: logoEntrance 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .brand-logo {
+    width: min(300px, 80vw);
+    height: auto;
+    object-fit: contain;
+    filter: 
+      drop-shadow(0 0 10px rgba(0, 123, 255, 0.5))
+      drop-shadow(0 0 20px rgba(0, 123, 255, 0.3));
+    margin-bottom: 1rem;
+  }
+  
+  .brand-tagline {
+    color: white;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    margin: 0;
+    text-shadow: 
+      0 0 8px rgba(255, 255, 255, 0.7),
+      0 0 15px rgba(0, 123, 255, 0.5);
+    animation: textPulse 2s ease-in-out infinite alternate;
+  }
+  
+  /* Road Animation */
+  .road {
+    width: min(400px, 90vw);
+    height: 100px;
+    position: relative;
+    background: #333;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 20vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .css-car {
+    width: 80px;
+    height: 40px;
+    background-color: #007bff;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    left: -100px;
+    top: 30px;
+    animation: driveIn 1.5s ease-in-out forwards;
+  }
+  
+  /* Car Details */
+  .css-car::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background-color: #0056b3;
+    border-radius: 5px;
+    top: -10px;
+    left: 10px;
+  }
+  
+  .css-car::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 10px;
+    background-color: #0056b3;
+    bottom: 0;
+    left: 10px;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .road-line {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: repeating-linear-gradient(
+      to right,
+      white,
+      white 20px,
+      transparent 20px,
+      transparent 40px
+    );
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Animations */
+  @keyframes driveIn {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(calc(100vw + 100px)); }
+  }
+  
+  @keyframes logoEntrance {
+    from {
+      transform: translateY(-50px) scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes textPulse {
+    from {
+      transform: scale(0.98);
+      opacity: 0.9;
+    }
+    to {
+      transform: scale(1.02);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .logo-display {
+      top: 10%;
+    }
+    
+    .road {
+      margin-top: 25vh;
+      height: 80px;
+    }
+    
+    .css-car {
+      width: 60px;
+      height: 30px;
+      top: 25px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .brand-logo {
+      width: 200px;
+    }
+    
+    .brand-tagline {
+      font-size: 0.9rem;
+    }
+  }

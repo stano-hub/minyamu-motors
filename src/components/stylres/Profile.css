@@ -1,0 +1,164 @@
+/* Main container */
+.profile-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header section */
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .profile-header h2 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .admin-badge {
+    background: #dc3545;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  /* Alert messages */
+  .alert {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+  }
+  
+  .alert-success {
+    background: #d4edda;
+    color: #155724;
+  }
+  
+  .alert-error {
+    background: #f8d7da;
+    color: #721c24;
+  }
+  
+  /* Form styling */
+  .profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    color: #555;
+  }
+  
+  .form-group input {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .form-group input:disabled {
+    background: #f5f5f5;
+  }
+  
+  /* Profile view styling */
+  .profile-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .profile-field {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .field-label {
+    font-weight: 600;
+    color: #555;
+  }
+  
+  /* Buttons */
+  .btn-save, .btn-edit {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+  }
+  
+  .btn-save:hover, .btn-edit:hover {
+    background: #0069d9;
+  }
+  
+  .btn-cancel, .btn-logout {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+  }
+  
+  .btn-cancel:hover, .btn-logout:hover {
+    background: #5a6268;
+  }
+  
+  .btn-admin {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    transition: background 0.2s;
+  }
+  
+  .btn-admin:hover {
+    background: #218838;
+  }
+  
+  .form-actions, .profile-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  /* Admin section */
+  .admin-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+  }
+  
+  .admin-section h3 {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }

@@ -1,0 +1,95 @@
+/* Hamburger Menu */
+.hamburger-menu {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.5s ease; /* Added transform for animation */
+    background-color: #333;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.hamburger-menu:hover {
+    animation: rotateHamburger 0.5s ease-in-out;
+}
+
+.hamburger-menu.active {
+    transform: rotate(90deg); /* Rotate when sidebar is open */
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.8); /* Translucent background */
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 999;
+    padding: 20px;
+    backdrop-filter: blur(5px); /* Optional: Adds a blur effect behind the sidebar */
+    padding-top: 50px;
+}
+
+.sidebar.open {
+    left: 0; /* Slide in when open */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+    transition: transform 0.3s ease-in-out; /* Added smooth transition */
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+    color: #61dafb;
+    transition: color 0.3s ease;
+    font-weight: bold;
+    text-shadow: 0 0 5px #61dafb, 0 0 10px #61dafb, 0 0 15px #61dafb;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes rotateHamburger {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    75% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(270deg);
+    }
+    
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #61dafb, 0 0 10px #61dafb, 0 0 15px #61dafb;
+    }
+    100% {
+        text-shadow: 0 0 15px #61dafb, 0 0 30px #61dafb, 0 0 45px #61dafb;
+    }
+}

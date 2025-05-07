@@ -1,0 +1,100 @@
+/* Carousel.css */
+.carousel {
+    margin: 2rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .carousel-img {
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .carousel-caption {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1.5rem;
+    border-radius: 8px;
+    bottom: 3rem;
+    right: auto;
+    left: 5%;
+    text-align: left;
+    max-width: 40%;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  
+  .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+  }
+  
+  .carousel-indicators .active {
+    background-color: #fff;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    opacity: 1;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-size: 100% 100%;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .carousel-img {
+      height: 400px;
+    }
+    
+    .carousel-caption {
+      max-width: 60%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-img {
+      height: 300px;
+    }
+    
+    .carousel-caption {
+      max-width: 80%;
+      bottom: 1.5rem;
+      padding: 1rem;
+    }
+    
+    .carousel-caption h3 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .carousel-img {
+      height: 250px;
+    }
+    
+    .carousel-caption {
+      display: none !important;
+    }
+  }
