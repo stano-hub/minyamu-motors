@@ -66,24 +66,27 @@ body {
 
 .header-content {
   display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.App-logo {
-  height: 50px;
-  width: auto;
-  transition: filter var(--transition-medium);
-}
-
-.dark-mode .App-logo {
-  filter: invert(100%);
+  flex-direction: column; /* Stack title and logo vertically */
+  align-items: center;     /* Center horizontally */
+  gap: 5px;                /* Space between title and logo */
 }
 
 .App-title {
   font-size: 1.5rem;
   margin: 0;
   color: inherit;
+  text-align: center;
+}
+
+.App-logo {
+  height: 40px;
+  width: auto;
+  margin-top: 5px;
+  transition: filter var(--transition-medium);
+}
+
+.dark-mode .App-logo {
+  filter: invert(100%);
 }
 
 .header-links {
@@ -218,6 +221,7 @@ input:checked + .toggle-slider:before {
   z-index: var(--z-chat);
   overflow: hidden;
   transition: all var(--transition-medium);
+  overflow-y: auto;
 }
 
 /* ===== Animations ===== */
@@ -272,10 +276,11 @@ input:checked + .toggle-slider:after {
   }
 
   .App-logo {
-    height: 40px;
+    height: 30px;
   }
 }
 
+/* ===== Loading Spinner ===== */
 .loading-spinner {
   display: inline-block;
   width: 50px;
