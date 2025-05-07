@@ -4,7 +4,7 @@ import axios from "axios";
 import { AuthContext } from '../App';
 import './stylres/AddProducts.css';
 
-const ADMIN_PASSWORD = "admin123"; // Set your local admin password here
+const ADMIN_PASSWORD = "MinyamuMotorsStaff@123"; // Set your local admin password here
 
 const AddProducts = () => {
   const navigate = useNavigate();
