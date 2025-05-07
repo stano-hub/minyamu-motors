@@ -14,7 +14,7 @@ const DeleteProduct = () => {
   const [isPasswordValid, setIsPasswordValid] = useState(true);
 
   const handleDelete = async () => {
-    if (password !== 'MinyamuMotors@123') {
+    if (password !== 'MinyamuMotorsStaff@123') {
       setIsPasswordValid(false);
       return;
     }
