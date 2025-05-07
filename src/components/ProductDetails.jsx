@@ -23,7 +23,7 @@ const ProductDetail = () => {
 
   const requestAdminAccess = () => {
     const password = prompt('Enter admin password:');
-    if (password === 'admin123') {
+    if (password === 'MinyamuMotorsStaff@123') {
       localStorage.setItem('isAdmin', 'true');
       setIsAdmin(true);
     } else {
