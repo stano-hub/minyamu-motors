@@ -305,6 +305,20 @@
   color: var(--white);
 }
 
+.tagline {
+  font-size: 1.2rem;
+  margin-top: -0.5rem;
+  color: #709bc9;
+  text-align: center;
+}
+
+.cta-text {
+  text-align: center;
+  font-size: 1rem;
+  color: #66d9cc;
+  margin-bottom: 1rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .content-wrapper {
