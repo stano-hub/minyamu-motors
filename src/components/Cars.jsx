@@ -22,14 +22,14 @@ const Cars = () => {
   // Define your vehicle categories
   const vehicleCategories = [
     "All",
-    "SUV",
-    "Sedan",
-    "Saloon",
-    "Hatchback",
-    "Truck",
-    "Van",
-    "Sports",
-    "Electric"
+    // "SUV",
+    // "Sedan",
+    // "Saloon",
+    // "Hatchback",
+    // "Truck",
+    // "Van",
+    // "Sports",
+    // "Electric"
   ];
 
   const img_url = 'https://stanohub.pythonanywhere.com/static/images/';
