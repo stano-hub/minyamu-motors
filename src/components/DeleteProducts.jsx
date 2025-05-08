@@ -25,14 +25,28 @@ const DeleteProduct = () => {
     setSuccessMessage(null);
 
     try {
-      // Simulate API call
-      setTimeout(() => {
-        setLoading(false);
-        setSuccessMessage('Product deleted successfully.');
-        setTimeout(() => navigate('/Cars'), 2000);
-      }, 1500);
+      const response = await fetch(
+        `https://stanohub.pythonanywhere.com/api/delete_product/${product.product_id}`,
+        {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ admin_password: password }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.Error || 'Failed to delete product');
+      }
+
+      setSuccessMessage(data.Message || 'Product deleted successfully.');
+      setTimeout(() => navigate('/Cars'), 2000);
     } catch (err) {
-      setError('An unexpected error occurred.');
+      setError(err.message || 'An unexpected error occurred.');
+    } finally {
       setLoading(false);
     }
   };
@@ -60,6 +74,7 @@ const DeleteProduct = () => {
             <img
               src={`https://stanohub.pythonanywhere.com/static/images/${product.product_photo}`}
               alt={product.product_name}
+              className="img-fluid rounded"
             />
           </div>
           <div className="product-info">
@@ -67,11 +82,11 @@ const DeleteProduct = () => {
             <p className="text-muted">{product.product_description}</p>
             <h4 className="text-warning">{product.product_cost}</h4>
 
-            <p>To delete this product, enter the admin password:</p>
+            <p className="mt-4">To delete this product, enter the admin password:</p>
 
             <input
               type="password"
-              className="form-control mt-3"
+              className="form-control mt-2"
               placeholder="Enter Admin Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
