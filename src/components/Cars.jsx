@@ -19,17 +19,9 @@ const Cars = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const navigate = useNavigate();
 
-  // Define your vehicle categories
   const vehicleCategories = [
     "All",
-    // "SUV",
-    // "Sedan",
-    // "Saloon",
-    // "Hatchback",
-    // "Truck",
-    // "Van",
-    // "Sports",
-    // "Electric"
+    // Add specific categories here if needed
   ];
 
   const img_url = 'https://stanohub.pythonanywhere.com/static/images/';
@@ -54,13 +46,13 @@ const Cars = () => {
 
   useEffect(() => {
     const filtered = products.filter(product => {
-      const matchesSearch = product.product_name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          product.product_description.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesPrice = product.product_cost >= priceRange[0] && 
-                          product.product_cost <= priceRange[1];
-      const matchesCategory = selectedCategory === "All" || 
-                            product.vehicle_type === selectedCategory;
-      
+      const matchesSearch = product.product_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.product_description.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesPrice = product.product_cost >= priceRange[0] &&
+        product.product_cost <= priceRange[1];
+      const matchesCategory = selectedCategory === "All" ||
+        product.vehicle_type === selectedCategory;
+
       return matchesSearch && matchesPrice && matchesCategory;
     });
     setFilteredProducts(filtered);
@@ -80,27 +72,24 @@ const Cars = () => {
   };
 
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-KE', {
-      style: 'currency',
-      currency: 'KES'
-    }).format(price).replace('KES', 'KES ');
+    return `KES ${Math.round(price).toLocaleString('en-KE')}`;
   };
 
   const areFiltersActive = () => {
-    return searchQuery !== "" || 
-           priceRange[0] !== 0 || 
-           priceRange[1] !== 10000000 || 
-           selectedCategory !== "All";
+    return searchQuery !== "" ||
+      priceRange[0] !== 0 ||
+      priceRange[1] !== 10000000 ||
+      selectedCategory !== "All";
   };
 
   return (
     <div className={`cars-container ${isDarkMode ? 'dark-mode' : ''}`}>
       <div className="main-content">
         <Sidebar />
-        
+
         <div className="cars-content">
           <h1 className="cars-title">All Vehicles</h1>
-          
+
           {/* Category Filter */}
           <div className="category-filter">
             {vehicleCategories.map(category => (
@@ -113,7 +102,7 @@ const Cars = () => {
               </button>
             ))}
           </div>
-          
+
           <div className="filter-controls">
             <div className="search-box">
               <FaSearch className="search-icon" />
@@ -124,16 +113,16 @@ const Cars = () => {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
-            
+
             <div className="filter-buttons">
-              <button 
+              <button
                 className="filter-toggle"
                 onClick={() => setShowFilters(!showFilters)}
               >
                 <FaFilter /> {showFilters ? 'Hide Filters' : 'Show Filters'}
               </button>
-              
-              <button 
+
+              <button
                 className={`reset-btn ${!areFiltersActive() ? 'disabled' : ''}`}
                 onClick={resetFilters}
                 disabled={!areFiltersActive()}
@@ -141,7 +130,7 @@ const Cars = () => {
                 <FaUndo /> Reset
               </button>
             </div>
-            
+
             {showFilters && (
               <div className="price-filter">
                 <h4>Price Range (KES)</h4>
