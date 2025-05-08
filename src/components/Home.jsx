@@ -98,7 +98,11 @@ const Home = () => {
           </div>
         )}
 
-        <h1 className="main-title">Recently Added Vehicles</h1>
+        {/* ✨ Added catchy tagline */}
+        <h1 className="main-title">This are some of the available Vehicles</h1>
+        <p className="subtitle tagline">
+          🚗 Discover your next ride from our newest arrivals – carefully selected for you.
+        </p>
 
         <div className="search-container">
           <div className="input-group search-box">
@@ -115,6 +119,13 @@ const Home = () => {
           </div>
         </div>
 
+        {/* ✨ Call-to-action to encourage browsing */}
+        <p className="cta-text">
+          Whether you're looking for performance, comfort, or affordability – we’ve got something for you.
+          Browse the latest additions below or search to find exactly what you need!
+        </p>
+
+        {/* Loading and Error States */}
         {loading && (
           <div className="loading-container">
             <div className="loading-bar"></div>
