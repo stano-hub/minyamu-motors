@@ -169,12 +169,12 @@ const Home = () => {
                       View Details
                     </button>
 
-                    <button
+{/*                     <button
                       className="btn purchase-btn"
                       onClick={() => navigate('/MakePayments', { state: { product } })}
                     >
                       Purchase
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
