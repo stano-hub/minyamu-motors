@@ -74,12 +74,12 @@ const ProductDetail = () => {
             <div className="product-price">{product.product_cost}</div>
 
             <div className="button-group">
-              <button
+{/*               <button
                 className="payment-button"
                 onClick={() => navigate('/MakePayments', { state: { product } })}
               >
                 <FaCreditCard /> Proceed to Payment
-              </button>
+              </button> */}
 
               <a 
                 href="tel:+254745170595" 
