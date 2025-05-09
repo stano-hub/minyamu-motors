@@ -197,14 +197,14 @@ const Cars = () => {
                     >
                       Details
                     </button>
-                    {isAuthenticated && (
+{/*                     {isAuthenticated && (
                       <button
                         className="purchase-btn"
                         onClick={() => navigate('/MakePayments', { state: { product } })}
                       >
                         Purchase
                       </button>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </div>
